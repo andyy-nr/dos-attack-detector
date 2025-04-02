@@ -370,7 +370,8 @@
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -384,27 +385,14 @@
      <string>Dashboard</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuMonitor_control">
-    <property name="title">
-     <string>Monitor control</string>
-    </property>
-   </widget>
    <widget class="QMenu" name="menuAlerts">
     <property name="title">
      <string>Alerts</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menuLogs">
-    <property name="title">
-     <string>Logs</string>
-    </property>
-   </widget>
    <addaction name="menuDashboard"/>
-   <addaction name="menuMonitor_control"/>
    <addaction name="menuAlerts"/>
-   <addaction name="menuLogs"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>
