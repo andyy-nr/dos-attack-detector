@@ -1,0 +1,48 @@
+"""
+HOW TO CONNECT TO GUI:
+
+1. Import backend components:
+   from backend.detector import DoSDetector
+   from backend.alert_manager import AlertManager
+   from backend.network import BandwidthMonitor
+
+2. Initialize in your GUI class:
+   
+   class MainWindow:
+       def __init__(self):
+           # Set up alert system
+           self.alert_manager = AlertManager(self.update_gui_alerts)
+           
+           # Initialize detector
+           self.detector = DoSDetector(self.alert_manager.new_alert)
+           
+           # Set up bandwidth monitor
+           self.bw_monitor = BandwidthMonitor(self.update_gui_bandwidth)
+
+3. Start services (in separate threads!):
+   
+   def start_backend(self):
+       import threading
+       
+       # Start detector
+       threading.Thread(
+           target=self.detector.start,
+           daemon=True
+       ).start()
+       
+       # Start bandwidth monitor
+       threading.Thread(
+           target=self.bw_monitor.start,
+           daemon=True
+       ).start()
+
+4. Implement the GUI update methods:
+   
+   def update_gui_alerts(self, alert):
+       # Update alerts table
+       pass
+       
+   def update_gui_bandwidth(self, rates):
+       # Update bandwidth display
+       pass
+"""
