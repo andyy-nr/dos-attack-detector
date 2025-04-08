@@ -1,5 +1,6 @@
 from datetime import datetime
 import json
+from typing import Callable
 """
 Alert Management System
 Formats and routes alerts to GUI

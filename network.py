@@ -1,5 +1,6 @@
 import psutil
 import time
+from typing import Callable
 """
 Network Bandwidth Monitor
 Tracks real-time bandwidth usage
