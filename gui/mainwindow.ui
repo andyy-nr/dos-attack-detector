@@ -208,7 +208,7 @@
     <property name="geometry">
      <rect>
       <x>300</x>
-      <y>150</y>
+      <y>100</y>
       <width>279</width>
       <height>60</height>
      </rect>
@@ -328,30 +328,21 @@
      </item>
     </layout>
    </widget>
+   <widget class="QPushButton" name="alert1_btn_2">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>180</y>
+      <width>83</width>
+      <height>29</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>See all alerts</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QMenuBar" name="menuBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>762</width>
-     <height>33</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menuDashboard">
-    <property name="title">
-     <string>Dashboard</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuAlerts">
-    <property name="title">
-     <string>Alerts</string>
-    </property>
-   </widget>
-   <addaction name="menuDashboard"/>
-   <addaction name="menuAlerts"/>
-  </widget>
  </widget>
  <resources/>
  <connections/>
