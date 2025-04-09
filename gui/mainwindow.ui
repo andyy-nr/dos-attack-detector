@@ -328,7 +328,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="alert1_btn_2">
+   <widget class="QPushButton" name="all_alerts_btn">
     <property name="geometry">
      <rect>
       <x>470</x>
