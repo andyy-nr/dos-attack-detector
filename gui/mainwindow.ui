@@ -121,19 +121,6 @@
          <string>Lasted X minutes</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="alert1_btn">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>50</y>
-          <width>83</width>
-          <height>29</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Check</string>
-        </property>
-       </widget>
       </widget>
      </item>
      <item>
@@ -154,19 +141,6 @@
          <string>Lasted X minutes</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="alert2_btn">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>50</y>
-          <width>83</width>
-          <height>29</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Check</string>
-        </property>
-       </widget>
       </widget>
      </item>
      <item>
@@ -185,19 +159,6 @@
         </property>
         <property name="text">
          <string>Lasted X minutes</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="alert3_btn">
-        <property name="geometry">
-         <rect>
-          <x>100</x>
-          <y>50</y>
-          <width>83</width>
-          <height>29</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Check</string>
         </property>
        </widget>
       </widget>
