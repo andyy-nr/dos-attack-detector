@@ -25,16 +25,6 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QTableView" name="tableView">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>140</y>
-     <width>741</width>
-     <height>341</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
@@ -107,14 +97,24 @@
   <widget class="QPushButton" name="filter_btn">
    <property name="geometry">
     <rect>
-     <x>520</x>
-     <y>80</y>
-     <width>75</width>
-     <height>24</height>
+     <x>530</x>
+     <y>70</y>
+     <width>81</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Edit alert</string>
+    <string>Search alert</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="alerts_table">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>721</width>
+     <height>351</height>
+    </rect>
    </property>
   </widget>
  </widget>
