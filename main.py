@@ -6,6 +6,7 @@ from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QMainWindow, QApplication
 
 from gui.dashboard import Ui_MainWindow
+from gui.alerts import Ui_Form
 from detector import DoSDetector
 from alert_manager import AlertManager
 from network import BandwidthMonitor
@@ -36,6 +37,8 @@ class MainWindow(QMainWindow):
         self.bandwidth_timer = QTimer()
         self.bandwidth_timer.timeout.connect(self.update_gui_bandwidth)
         self.bandwidth_timer.start(1000)
+
+        self.ui.all_alerts_btn.clicked.connect(self.alerts_window)
 
 
     def start_backend(self):
@@ -82,6 +85,11 @@ class MainWindow(QMainWindow):
             self.ui.alert1_gb.setTitle(" ")
             self.ui.alert2_gb.setTitle(" ")
             self.ui.alert3_gb.setTitle(" ")
+
+    def alerts_window(self):
+        self.window = Ui_Form()
+
+
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

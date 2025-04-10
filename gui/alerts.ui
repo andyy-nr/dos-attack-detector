@@ -48,7 +48,7 @@
     <string>Time range</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox">
+  <widget class="QComboBox" name="time_range_cb">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -58,7 +58,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_2">
+  <widget class="QComboBox" name="type_cb">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -78,7 +78,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Severity</string>
+    <string>Type</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_3">
@@ -94,7 +94,7 @@
     <string>Lookup IP</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
+  <widget class="QLineEdit" name="ip_le">
    <property name="geometry">
     <rect>
      <x>460</x>
@@ -102,6 +102,19 @@
      <width>231</width>
      <height>28</height>
     </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="filter_btn">
+   <property name="geometry">
+    <rect>
+     <x>520</x>
+     <y>80</y>
+     <width>75</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit alert</string>
    </property>
   </widget>
  </widget>

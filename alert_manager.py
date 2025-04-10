@@ -27,8 +27,14 @@ class AlertManager:
         formatted = {
             'timestamp': datetime.now().isoformat(),
             'type': alert_data.get('type'),
-            'details': json.dumps(alert_data) # Serialize for GUI
+            'details': json.dumps({
+                'message': alert_data.get('details'),
+                'source_ip': alert_data.get('source_ip'),
+                'severity': alert_data.get('severity')
+            })
         }
+
         self.alerts.append(formatted)
         self.gui_handler(formatted) # Forward to GUI
-        
+
+
