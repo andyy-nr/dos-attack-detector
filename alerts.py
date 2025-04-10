@@ -21,3 +21,6 @@ class AlertsWindow(QWidget):
                 self.ui.alertsTable.setItem(row, 1, QTableWidgetItem(alert["type"]))
                 self.ui.alertsTable.setItem(row, 2, QTableWidgetItem(details.get("source_ip", "N/A")))
                 self.ui.alertsTable.setItem(row, 3, QTableWidgetItem(details.get("severity", "N/A")))
+        
+
+
