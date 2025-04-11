@@ -3,10 +3,9 @@ import sys
 import threading
 
 from PySide6.QtCore import QTimer
-from PySide6.QtWidgets import QMainWindow, QApplication
+from PySide6.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QHeaderView
 
 from gui.dashboard import Ui_MainWindow
-from alerts import AlertsWindow
 from detector import DoSDetector
 from alert_manager import AlertManager
 from network import BandwidthMonitor
@@ -39,7 +38,7 @@ class MainWindow(QMainWindow):
         self.bandwidth_timer.start(1000)
 
         self.update_dashboards_alerts()
-        self.ui.all_alerts_btn.clicked.connect(self.alerts_window)
+        self.update_gui_alerts()
 
     def start_backend(self):
         # Start detector
@@ -59,7 +58,7 @@ class MainWindow(QMainWindow):
         self.ui.outbandwith_lbl.setText(str(self.bandwidthData.upload))
 
     def update_dashboards_alerts(self):
-        last_alerts = self.alert_manager.last_three_alerts()
+        last_alerts = self.alert_manager.last_two_alerts()
         alerts = {}
         if last_alerts:
             for i, alert in enumerate(last_alerts):
@@ -71,26 +70,30 @@ class MainWindow(QMainWindow):
 
             self.ui.label_6.setText(str(alerts["alert_1"]["details"]))
             self.ui.label_5.setText(str(alerts["alert_2"]["details"]))
-            self.ui.label_2.setText(str(alerts["alert_3"]["details"]))
 
             self.ui.alert1_gb.setTitle(str(alerts["alert_1"]["timestamp"]))
             self.ui.alert2_gb.setTitle(str(alerts["alert_2"]["timestamp"]))
-            self.ui.alert3_gb.setTitle(str(alerts["alert_3"]["timestamp"]))
 
         else:
             self.ui.label_6.setText("No alert")
             self.ui.label_5.setText("No alert")
-            self.ui.label_2.setText("No alert")
 
             self.ui.alert1_gb.setTitle(" ")
             self.ui.alert2_gb.setTitle(" ")
-            self.ui.alert3_gb.setTitle(" ")
 
     def alerts_window(self):
         alerts = self.alert_manager.get_alerts()
-        self.window = AlertsWindow()
-        self.window.populate_table(alerts)
-        self.window.show()
+
+        self.ui.alerts_table.setRowCount(len(alerts))
+        for row, alert in enumerate(alerts):
+            details = json.loads(alert["details"])
+
+            self.ui.alerts_table.setItem(row, 0, QTableWidgetItem(alert["timestamp"]))
+            self.ui.alerts_table.setItem(row, 1, QTableWidgetItem(alert["type"]))
+            self.ui.alerts_table.setItem(row, 2, QTableWidgetItem(details.get("source_ip", "N/A")))
+            self.ui.alerts_table.setItem(row, 3, QTableWidgetItem(details.get("severity", "N/A")))
+
+        self.ui.alertsTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
     def update_gui_alerts(self, alert_data):
         if hasattr(self, 'alert_window') and self.alert_window.isVisible():
