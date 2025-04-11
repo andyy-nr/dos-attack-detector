@@ -38,6 +38,7 @@ class MainWindow(QMainWindow):
         self.bandwidth_timer.timeout.connect(self.update_gui_bandwidth)
         self.bandwidth_timer.start(1000)
 
+        self.update_dashboards_alerts()
         self.ui.all_alerts_btn.clicked.connect(self.alerts_window)
 
     def start_backend(self):
@@ -68,13 +69,13 @@ class MainWindow(QMainWindow):
                     'details': json.loads(alert['details'])
                 }
 
-            self.ui.label_6.setText(str(alerts["alerts_1"]["details"]))
-            self.ui.label_5.setText(str(alerts["alerts_2"]["details"]))
-            self.ui.label_2.setText(str(alerts["alerts_3"]["details"]))
+            self.ui.label_6.setText(str(alerts["alert_1"]["details"]))
+            self.ui.label_5.setText(str(alerts["alert_2"]["details"]))
+            self.ui.label_2.setText(str(alerts["alert_3"]["details"]))
 
-            self.ui.alert1_gb.setTitle(str(alerts["alerts_1"]["timestamp"]))
-            self.ui.alert2_gb.setTitle(str(alerts["alerts_2"]["timestamp"]))
-            self.ui.alert3_gb.setTitle(str(alerts["alerts_3"]["timestamp"]))
+            self.ui.alert1_gb.setTitle(str(alerts["alert_1"]["timestamp"]))
+            self.ui.alert2_gb.setTitle(str(alerts["alert_2"]["timestamp"]))
+            self.ui.alert3_gb.setTitle(str(alerts["alert_3"]["timestamp"]))
 
         else:
             self.ui.label_6.setText("No alert")
@@ -86,7 +87,7 @@ class MainWindow(QMainWindow):
             self.ui.alert3_gb.setTitle(" ")
 
     def alerts_window(self):
-        alerts = self.alert_manager.alerts()
+        alerts = self.alert_manager.get_alerts()
         self.window = AlertsWindow()
         self.window.populate_table(alerts)
         self.window.show()
@@ -94,7 +95,6 @@ class MainWindow(QMainWindow):
     def update_gui_alerts(self, alert_data):
         if hasattr(self, 'alert_window') and self.alert_window.isVisible():
             self.alert_window.populate_table(self.alert_manager.all_alerts())
-
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
