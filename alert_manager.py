@@ -38,8 +38,8 @@ class AlertManager:
         self.gui_handler(formatted) # Forward to GUI
 
     def last_two_alerts(self):
-        """Return the last three alerts"""
-        return self.alerts[-3:]
+        """Return the last two alerts"""
+        return self.alerts[-2:]
     
     def get_alerts(self):
         """Return all alerts"""

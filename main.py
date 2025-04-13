@@ -3,9 +3,10 @@ import sys
 import threading
 
 from PySide6.QtCore import QTimer
-from PySide6.QtWidgets import QMainWindow, QApplication, QTableWidgetItem, QHeaderView
+from PySide6.QtWidgets import QMainWindow, QApplication
 
 from gui.dashboard import Ui_MainWindow
+from alerts import AlertsWindow
 from detector import DoSDetector
 from alert_manager import AlertManager
 from network import BandwidthMonitor
@@ -38,7 +39,6 @@ class MainWindow(QMainWindow):
         self.bandwidth_timer.start(1000)
 
         self.update_dashboards_alerts()
-        self.update_gui_alerts()
 
     def start_backend(self):
         # Start detector
@@ -81,9 +81,7 @@ class MainWindow(QMainWindow):
             self.ui.alert1_gb.setTitle(" ")
             self.ui.alert2_gb.setTitle(" ")
 
-    def alerts_window(self):
-        alerts = self.alert_manager.get_alerts()
-
+    def populate_table(self, alerts: list):
         self.ui.alerts_table.setRowCount(len(alerts))
         for row, alert in enumerate(alerts):
             details = json.loads(alert["details"])
@@ -92,12 +90,6 @@ class MainWindow(QMainWindow):
             self.ui.alerts_table.setItem(row, 1, QTableWidgetItem(alert["type"]))
             self.ui.alerts_table.setItem(row, 2, QTableWidgetItem(details.get("source_ip", "N/A")))
             self.ui.alerts_table.setItem(row, 3, QTableWidgetItem(details.get("severity", "N/A")))
-
-        self.ui.alertsTable.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
-
-    def update_gui_alerts(self, alert_data):
-        if hasattr(self, 'alert_window') and self.alert_window.isVisible():
-            self.alert_window.populate_table(self.alert_manager.all_alerts())
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
