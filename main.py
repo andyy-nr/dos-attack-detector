@@ -6,7 +6,6 @@ from PySide6.QtCore import QTimer
 from PySide6.QtWidgets import QMainWindow, QApplication
 
 from gui.dashboard import Ui_MainWindow
-from alerts import AlertsWindow
 from detector import DoSDetector
 from alert_manager import AlertManager
 from network import BandwidthMonitor
