@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.8.2
+## Created by: Qt User Interface Compiler version 6.9.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,18 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QGridLayout, QGroupBox,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
-    QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QApplication, QGridLayout, QGroupBox, QHeaderView,
+    QLabel, QMainWindow, QSizePolicy, QStatusBar,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(762, 720)
-        MainWindow.setMinimumSize(QSize(762, 720))
-        MainWindow.setMaximumSize(QSize(762, 720))
+        MainWindow.resize(762, 620)
+        MainWindow.setMinimumSize(QSize(762, 620))
+        MainWindow.setMaximumSize(QSize(762, 620))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.label_8 = QLabel(self.centralwidget)
@@ -78,35 +77,14 @@ class Ui_MainWindow(object):
 
         self.gridLayout.addWidget(self.outbandwith_lbl, 1, 1, 1, 1)
 
-        self.filter_btn = QPushButton(self.centralwidget)
-        self.filter_btn.setObjectName(u"filter_btn")
-        self.filter_btn.setGeometry(QRect(530, 360, 81, 31))
-        self.label_3 = QLabel(self.centralwidget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setGeometry(QRect(20, 370, 91, 31))
-        self.ip_le = QLineEdit(self.centralwidget)
-        self.ip_le.setObjectName(u"ip_le")
-        self.ip_le.setGeometry(QRect(460, 320, 231, 28))
-        self.time_range_cb = QComboBox(self.centralwidget)
-        self.time_range_cb.setObjectName(u"time_range_cb")
-        self.time_range_cb.setGeometry(QRect(110, 320, 231, 28))
-        self.type_cb = QComboBox(self.centralwidget)
-        self.type_cb.setObjectName(u"type_cb")
-        self.type_cb.setGeometry(QRect(110, 370, 231, 28))
-        self.label = QLabel(self.centralwidget)
-        self.label.setObjectName(u"label")
-        self.label.setGeometry(QRect(20, 320, 131, 31))
         self.alerts_table = QTableWidget(self.centralwidget)
         self.alerts_table.setObjectName(u"alerts_table")
-        self.alerts_table.setGeometry(QRect(20, 410, 731, 261))
+        self.alerts_table.setGeometry(QRect(20, 310, 731, 261))
         self.alerts_table.setColumnCount(0)
         self.alerts_table.horizontalHeader().setCascadingSectionResizes(True)
         self.alerts_table.horizontalHeader().setDefaultSectionSize(183)
         self.alerts_table.horizontalHeader().setStretchLastSection(False)
         self.alerts_table.verticalHeader().setCascadingSectionResizes(False)
-        self.label_7 = QLabel(self.centralwidget)
-        self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(370, 320, 131, 31))
         self.label_4 = QLabel(self.centralwidget)
         self.label_4.setObjectName(u"label_4")
         self.label_4.setGeometry(QRect(250, 0, 279, 60))
@@ -142,10 +120,6 @@ class Ui_MainWindow(object):
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"Out", None))
         self.inbandwith_lbl.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.outbandwith_lbl.setText(QCoreApplication.translate("MainWindow", u"...", None))
-        self.filter_btn.setText(QCoreApplication.translate("MainWindow", u"Search alert", None))
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Type", None))
-        self.label.setText(QCoreApplication.translate("MainWindow", u"Time range", None))
-        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Lookup IP", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"Last alerts", None))
         self.alert2_gb.setTitle(QCoreApplication.translate("MainWindow", u"Fecha", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"Lasted X minutes", None))

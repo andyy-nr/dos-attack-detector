@@ -7,19 +7,19 @@
     <x>0</x>
     <y>0</y>
     <width>762</width>
-    <height>720</height>
+    <height>620</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>762</width>
-    <height>720</height>
+    <height>620</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>762</width>
-    <height>720</height>
+    <height>620</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -131,80 +131,11 @@
      </item>
     </layout>
    </widget>
-   <widget class="QPushButton" name="filter_btn">
-    <property name="geometry">
-     <rect>
-      <x>530</x>
-      <y>360</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Search alert</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>370</y>
-      <width>91</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Type</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="ip_le">
-    <property name="geometry">
-     <rect>
-      <x>460</x>
-      <y>320</y>
-      <width>231</width>
-      <height>28</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="time_range_cb">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>320</y>
-      <width>231</width>
-      <height>28</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QComboBox" name="type_cb">
-    <property name="geometry">
-     <rect>
-      <x>110</x>
-      <y>370</y>
-      <width>231</width>
-      <height>28</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>320</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Time range</string>
-    </property>
-   </widget>
    <widget class="QTableWidget" name="alerts_table">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>410</y>
+      <y>310</y>
       <width>731</width>
       <height>261</height>
      </rect>
@@ -224,19 +155,6 @@
     <attribute name="verticalHeaderCascadingSectionResizes">
      <bool>false</bool>
     </attribute>
-   </widget>
-   <widget class="QLabel" name="label_7">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>320</y>
-      <width>131</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Lookup IP</string>
-    </property>
    </widget>
    <widget class="QLabel" name="label_4">
     <property name="geometry">

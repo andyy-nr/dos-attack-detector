@@ -8,7 +8,7 @@ Formats and routes alerts to GUI
 """
 
 class AlertManager:
-    def _init_(self, gui_handler: Callable,json_file: str = "alerts.json"):
+    def __init__(self, gui_handler: Callable,json_file: str = "alerts.json"):
         """
         Initialize with GUI callback function
         
@@ -49,8 +49,11 @@ class AlertManager:
             })
 
         }
-   
 
         self.alerts.append(formatted)
         self._save_alerts()
-        self.gui_handler(formatted) # Forward to GUI
+        self.gui_handler(formatted) # Forward to GUIç
+
+    def last_two_alerts(self):
+        """Return the last 2 alerts"""
+        return self.alerts[-2:]
