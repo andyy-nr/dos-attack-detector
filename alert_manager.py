@@ -23,6 +23,7 @@ class AlertManager:
         self.gui_handler = gui_handler
         self.json_file = json_file
         self.alerts = self._load_alerts() #carga las existentes al iniciar 
+
     def _load_alerts(self):
         #carga desde el json
         if os.path.exists(self.json_file):
@@ -39,19 +40,22 @@ class AlertManager:
 
     def new_alert(self, alert_data: dict):
         """Format and forward alerts to GUI"""
+        print(alert_data)
+        details = {
+        'rate': alert_data.get('rate', 0),
+        'source_ip': alert_data.get('source_ip', 'N/A'),
+        'severity': 'High' if alert_data.get('rate', 0) > 1000 else 'Medium'
+            }   
+        
         formatted = {
             'timestamp': datetime.now().isoformat(),
-            'type': alert_data.get('type'),
-            'details': json.dumps({
-                'message': alert_data.get('details'),
-                'source_ip': alert_data.get('source_ip'),
-                'severity': alert_data.get('severity')
-            })
-
-        }
+            'type': alert_data['type'],  # Asume que siempre existe
+            'details': json.dumps(details)
+            }
 
         self.alerts.append(formatted)
         self._save_alerts()
+        # print("DEBUG NEW ALERT ADDED")
         self.gui_handler(formatted) # Forward to GUIç
 
     def last_two_alerts(self):

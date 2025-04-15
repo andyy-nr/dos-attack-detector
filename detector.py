@@ -20,9 +20,9 @@ class DoSDetector:
         """
         self.alert_callback = alert_callback
         self.packet_counts ={
-            'total':0, #todous
-            'syn': 0, #SYN packets for syn floods 
-            'udp':0 # for udp floods 
+            'total':500, #todous
+            'syn': 300, #SYN packets for syn floods 
+            'udp': 200 # for udp floods 
         }
         self.last_check= time.time()
 
@@ -40,6 +40,7 @@ class DoSDetector:
         
     def _analyze_packet(self,packet):
         """ Process each incoming packet """
+        #print("DEBUG packet analyzed :D")
         self.packet_counts['total'] +=1
 
         if IP in packet:
@@ -58,12 +59,15 @@ class DoSDetector:
         """Evaluate traffic against attack thresholds
             Triggers alerts when thresholds exceeded
         """
-        if self.packet_counts['total'] > 1000:  # Example threshold
-            self.alert_callback({
-                'type': 'HIGH_TRAFFIC',
-                'rate': self.packet_counts['total'],
-                'timestamp': time.time()
-            })
-        
+        try:
+            if self.packet_counts['total'] > 500:  # Example threshold
+                self.alert_callback({
+                    'type': 'HIGH_TRAFFIC',
+                    'rate': self.packet_counts['total'],
+                    'timestamp': time.time()
+                })
+        except Exception as e:
+            print("ERROR during _check_tresholds: ", e)
+
         # Reset counters
         self.packet_counts = {k: 0 for k in self.packet_counts}

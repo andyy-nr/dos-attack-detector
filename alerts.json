@@ -1,0 +1,67 @@
+[
+  {
+    "timestamp": "2025-04-14T20:35:07.779244",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 501, \"source_ip\": \"N/A\", \"severity\": \"Medium\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:08.780900",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 7158, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:09.785450",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6278, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:10.788070",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6600, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:11.791361",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 8059, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:12.797489",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6623, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:13.798743",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6689, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:14.803707",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 5016, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:15.813368",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6101, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:16.815125",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6069, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:17.820330",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 8074, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:18.824255",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 7976, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  },
+  {
+    "timestamp": "2025-04-14T20:35:19.841362",
+    "type": "HIGH_TRAFFIC",
+    "details": "{\"rate\": 6451, \"source_ip\": \"N/A\", \"severity\": \"High\"}"
+  }
+]
