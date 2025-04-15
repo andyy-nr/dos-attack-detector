@@ -88,7 +88,7 @@ class MainWindow(QMainWindow):
         self.ui.alerts_table.setHorizontalHeaderLabels(["Timestamp", "Type", "Message", "Severity"])
 
         self.ui.alerts_table.setRowCount(len(alerts))
-        for row, alert in enumerate(alerts):
+        for row, alert in enumerate(reversed(alerts)):
             details = json.loads(alert["details"])
 
             self.ui.alerts_table.setItem(row, 0, QTableWidgetItem(alert["timestamp"]))
